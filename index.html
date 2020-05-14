@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Audio player</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://kit.fontawesome.com/f457884647.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="player">
+		<div class="main-player">
+			<div class="play-input">
+				<input type="text" id="play-field" value="" disabled />
+				<div id="dur"></div>
+			</div>
+			<!-- Start progress bar element -->
+			<div class="prog-container" onclick="Media.currentTimeUpdate()">
+				<div class="progress-bar">
+					<div class="progress-bar-full" id="full-bar"></div>
+				</div>
+			</div>
+			<!-- [END] progress bar element -->
+			<!-- [START] control buttons  bar element -->
+			<div class="buttons">
+				<button id="prev" class="ctrl-button" onclick="Media.previousSong()">
+					<i class="fas fa-fast-backward"></i>
+				</button>
+				<button id="back" class="ctrl-button" onclick="Media.timeBackward()">
+					<i class="fas fa-backward"></i>
+				</button>
+				<button id="pause" class="ctrl-button" onclick="Media.pauseSong()">
+					<i class="fas fa-pause"></i>
+				</button>
+				<button id="play" class="ctrl-button" onclick="Media.playSong()">
+					<i class="fas fa-play"></i>
+				</button>
+				<button id="stop" class="ctrl-button" onclick="Media.stopSong()">
+					<i class="fas fa-stop"></i>
+				</button>
+				<button id="forward" class="ctrl-button" onclick="Media.timeForward()">
+					<i class="fas fa-forward"></i>
+				</button>
+				<button id="next" class="ctrl-button" onclick="Media.nextSong()">
+					<i class="fas fa-fast-forward"></i>
+				</button>
+			</div>
+			<!-- [END] control buttons  bar element -->
+			<div class="vol-container">
+				<span id="mute-button" onclick="Media.mute(this)">
+					<i class="fas fa-volume-up"></i>
+				</span>
+				<input type="range" id="volume" value="100" onmousemove="Media.volume(this)">
+			</div>
+		</div>
+		
+		<div class="song-container">
+			
+		</div>
+		<!-- <ul class="playlist">
+			<li class="song-item">J J Cale - Cocaine</li>
+			<li class="song-item">Dire Straits - Sultans of Swing</li>
+			<li class="song-item">Creedence - Proud Mary</li>
+			<li class="song-item">Kansas - Carry On My Wayward Son</li>
+		</ul> -->
+	</div>
+
+	<script src="js/Media.js"></script>
+</body>
+</html>
